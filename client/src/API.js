@@ -1,3 +1,4 @@
+
 const API_URL = 'http://localhost:5000';
 // This is what talks to the backend
 export async function listLogEntries(){  
