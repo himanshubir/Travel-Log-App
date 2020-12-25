@@ -20,10 +20,10 @@ connection.once('open', () => {
 app.use(morgan('common')); // Sample log in terminal ::1 - - [20/Nov/2020:03:52:20 +0000] "GET / HTTP/1.1" 404 139
 app.use(helmet());
 app.use(cors({
-    origin: process.env.CORS_ORIGIN, // Only requests coming from this location can reach our backend
+    origin: "http://localhost:3000"//process.env.CORS_ORIGIN, // Only requests coming from this location can reach our backend
 }));
 app.use(express.json()); // Body Parsing Middleware
-const port = process.env.PORT || 3141;
+const port = process.env.PORT || 5000;
 
 app.use('/', logs);
 
