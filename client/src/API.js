@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000';
+const API_URL = 'http://localhost:3141';
 // This is what talks to the backend
 export async function listLogEntries(){  
     const response = await fetch(`${API_URL}/`);

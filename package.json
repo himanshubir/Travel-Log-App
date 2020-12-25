@@ -12,14 +12,17 @@
     "mongoose": "^5.11.8",
     "morgan": "^1.10.0",
     "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-hook-form": "^6.13.1",
+    "react-map-gl": "^6.0.2",
     "react-scripts": "^4.0.1"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-backend": "node server/index.js",
+    "start-backend": "node server/src/index.js",
     "start-frontend": "react-scripts start",
-    "start": "npm run start-backend && npm run start-frontend"
+    "start": "npm run start-frontend && npm run start-backend"
   },
   "repository": {
     "type": "git",
@@ -30,5 +33,17 @@
   "bugs": {
     "url": "https://github.com/himanshubir/Travel-Log-App/issues"
   },
-  "homepage": "https://github.com/himanshubir/Travel-Log-App#readme"
+  "homepage": "https://github.com/himanshubir/Travel-Log-App#readme",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

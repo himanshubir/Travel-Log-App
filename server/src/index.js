@@ -8,8 +8,8 @@ const mongoose = require('mongoose');
 const middlewares = require('./middlewares'); // Gets the middlewares from middlewares.js
 const logs = require('./api/logs');
 const app = express();
-
-mongoose.connect(process.env.DATABASE_URL, {
+console.log(process.env.CORS_ORIGIN)
+mongoose.connect('mongodb+srv://himanshu_biradar:QR181%5E%25%5EZTc@cluster0.r0ltp.mongodb.net/Travel-Logs-DB?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -23,7 +23,7 @@ app.use(cors({
     origin: process.env.CORS_ORIGIN, // Only requests coming from this location can reach our backend
 }));
 app.use(express.json()); // Body Parsing Middleware
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3141;
 
 app.use('/', logs);
 
