@@ -9,7 +9,7 @@ const middlewares = require('./middlewares'); // Gets the middlewares from middl
 const logs = require('./api/logs');
 const app = express();
 
-mongoose.connect(process.env.DATABASE_URL, {
+mongoose.connect('mongodb+srv://himanshu_biradar:QR181%5E%25%5EZTc@cluster0.r0ltp.mongodb.net/Travel-Logs-DB?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
