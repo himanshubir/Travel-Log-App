@@ -24,7 +24,9 @@ app.use(cors({
 }));
 app.use(express.json()); // Body Parsing Middleware
 const port = process.env.PORT || 5000;
-
+if(process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging'){
+    app.use(express.static(path.join(__dirname, 'client/build', 'index.html')));
+}
 app.use('/', logs);
 
 app.use(middlewares.notFound);
