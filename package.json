@@ -20,8 +20,7 @@
     "client": "cd client && npm start",
     "server": "cd server/src && node index.js",
     "client:build": "cd client && npm run build",
-    "test":"concurrently --kill-others-on-fail \"npm run client\" \"npm run server\"",
-    "start": "npm run client"
+    "start":"concurrently --kill-others-on-fail \"npm run client\" \"npm run server\""
   },
   "eslintConfig": {
     "extends": [
