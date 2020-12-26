@@ -1,5 +1,5 @@
 const express = require('express');
-require('dotenv').config({ path: './.env' });
+require('dotenv').config({ path: '../.env' });
 const morgan = require('morgan'); // Logger, Automatically logs all requests
 const helmet = require('helmet'); // Hides some headers that might give away vulnerable information
 const cors = require('cors'); // Adds cross origin resource sharing header
