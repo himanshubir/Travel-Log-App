@@ -9,7 +9,7 @@ const middlewares = require('./middlewares'); // Gets the middlewares from middl
 const logs = require('./api/logs');
 const app = express();
 
-mongoose.connect('mongodb+srv://himanshu_biradar:QR181%5E%25%5EZTc@cluster0.r0ltp.mongodb.net/Travel-Logs-DB?retryWrites=true&w=majority', {
+mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -24,8 +24,8 @@ app.use(cors({
 }));
 app.use(express.json()); // Body Parsing Middleware
 const port = process.env.PORT || 5000;
-if(process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging'){
-    app.use(express.static(path.join(__dirname, 'client/build', 'index.html')));
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static('../client/build'));
 }
 app.use('/', logs);
 
