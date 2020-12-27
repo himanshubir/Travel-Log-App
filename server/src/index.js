@@ -30,6 +30,14 @@ const port = process.env.PORT || 5000;
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static(path.join(__dirname, '../../client/build')));
 }
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "https://travel-log-app-himanshu.herokuapp.com/");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+  });
 app.use('/', logs);
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
