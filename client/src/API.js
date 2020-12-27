@@ -11,6 +11,7 @@ export async function createLogEntry(entry){
         method: 'POST',
         headers:{
             'content-type': 'application/json',
+            'Access-Control-Allow-Origin': 'https://travel-log-app-himanshu.herokuapp.com'
 
         },
         body: JSON.stringify(entry),
