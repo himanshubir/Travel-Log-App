@@ -25,7 +25,7 @@
     "heroku-postbuild":"npm run install-client && npm run build",
     "start-server":"npm run install-server && npm run server",
     "start-client":"npm run install-client && npm run client",
-    "start":"npm run start-server && npm run start-client",
+    "start":"concurrently --kill-others-on-fail \"npm run client\" \"npm run server\"",
     "dev":"concurrently --kill-others-on-fail \"npm run client\" \"npm run server\""
   },
   "eslintConfig": {
