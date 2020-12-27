@@ -5,7 +5,7 @@ const LogEntry = require("../models/LogEntry");
 router.get('/', async(req, res, next) => {
     try {
         const entries = await LogEntry.find();
-        res.setHeader("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Origin", "https://travel-log-app-himanshu.herokuapp.com");
         res.json(entries);
     } catch (error) {
         next(error);

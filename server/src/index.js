@@ -25,6 +25,10 @@ app.use(helmet({
 app.use(cors({
     origin: 'https://travel-log-app-himanshu.herokuapp.com' // Only requests coming from this location can reach our backend
 }));
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+});
 app.use(express.json()); // Body Parsing Middleware
 const port = process.env.PORT || 5000;
 if(process.env.NODE_ENV === 'production'){
