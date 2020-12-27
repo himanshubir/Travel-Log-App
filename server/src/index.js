@@ -8,7 +8,9 @@ const path = require('path');
 const middlewares = require('./middlewares'); // Gets the middlewares from middlewares.js
 const logs = require('./api/logs');
 const app = express();
-
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static('../client/build'));
+}
 mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -24,9 +26,7 @@ app.use(cors({
 }));
 app.use(express.json()); // Body Parsing Middleware
 const port = process.env.PORT || 5000;
-if(process.env.NODE_ENV === 'production'){
-    app.use(express.static('../client/build'));
-}
+
 app.use('/', logs);
 
 app.use(middlewares.notFound);
