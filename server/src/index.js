@@ -21,6 +21,7 @@ app.use(morgan('common')); // Sample log in terminal ::1 - - [20/Nov/2020:03:52:
 app.use(helmet({
     contentSecurityPolicy: false,
 }));
+console.log(process.env.CORS_ORIGIN);
 app.use(cors({
     origin: process.env.CORS_ORIGIN, // Only requests coming from this location can reach our backend
 }));
