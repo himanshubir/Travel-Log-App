@@ -18,7 +18,9 @@ connection.once('open', () => {
     console.log("MongoDB Connection established");
 });
 app.use(morgan('common')); // Sample log in terminal ::1 - - [20/Nov/2020:03:52:20 +0000] "GET / HTTP/1.1" 404 139
-app.use(helmet());
+app.use(helmet({
+    contentSecurityPolicy: false,
+}));
 app.use(cors({
     origin: process.env.CORS_ORIGIN, // Only requests coming from this location can reach our backend
 }));
