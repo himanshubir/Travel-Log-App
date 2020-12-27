@@ -21,9 +21,9 @@ app.use(morgan('common')); // Sample log in terminal ::1 - - [20/Nov/2020:03:52:
 app.use(helmet({
     contentSecurityPolicy: false,
 }));
-app.use(cors({
-    origin: process.env.CORS_ORIGIN, // Only requests coming from this location can reach our backend
-}));
+// app.use(cors({
+//     origin: process.env.CORS_ORIGIN, // Only requests coming from this location can reach our backend
+// }));
 app.use(express.json()); // Body Parsing Middleware
 const port = process.env.PORT || 5000;
 if(process.env.NODE_ENV === 'production'){
