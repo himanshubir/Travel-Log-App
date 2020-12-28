@@ -1,8 +1,9 @@
 const express = require('express');
-require('dotenv').config({ path: '../.env' });
+require('dotenv').config({ path: '.env' });
 const morgan = require('morgan'); // Logger, Automatically logs all requests
 const helmet = require('helmet'); // Hides some headers that might give away vulnerable information
 const mongoose = require('mongoose');
+const cors = require('cors');
 const path = require('path');
 const middlewares = require('./middlewares'); // Gets the middlewares from middlewares.js
 const logs = require('./api/logs');
@@ -20,11 +21,13 @@ app.use(morgan('common')); // Sample log in terminal ::1 - - [20/Nov/2020:03:52:
 app.use(helmet({
     contentSecurityPolicy: false,
 }));
-
-
+app.use(cors({
+    origin:process.env.CORS_ORIGIN
+}));
 app.use(express.json()); // Body Parsing Middleware
 const port = process.env.PORT || 5000;
 if(process.env.NODE_ENV === 'production'){
+
     app.use(express.static(path.join(__dirname, '../../client/build')));
 }
 app.use('/', logs);
