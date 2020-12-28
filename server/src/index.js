@@ -2,7 +2,6 @@ const express = require('express');
 require('dotenv').config({ path: '../.env' });
 const morgan = require('morgan'); // Logger, Automatically logs all requests
 const helmet = require('helmet'); // Hides some headers that might give away vulnerable information
-const cors = require('cors'); // Adds cross origin resource sharing header
 const mongoose = require('mongoose');
 const path = require('path');
 const middlewares = require('./middlewares'); // Gets the middlewares from middlewares.js
@@ -22,9 +21,6 @@ app.use(helmet({
     contentSecurityPolicy: false,
 }));
 
-app.use(cors({
-    origin: process.env.CORS_ORIGIN // Only requests coming from this location can reach our backend
-}));
 
 app.use(express.json()); // Body Parsing Middleware
 const port = process.env.PORT || 5000;

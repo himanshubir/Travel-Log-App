@@ -14,16 +14,15 @@
     "react-map-gl": "^5.2.10",
     "react-scripts": "^4.0.1",
     "web-vitals": "^0.2.4"
-
   },
   "scripts": {
     "client": "cd client && npm start",
     "server": "cd server/src && npm install && node index.js",
     "build": "cd client  && npm run build",
-    "install-client":"cd client && npm install",
-    "heroku-postbuild":"npm run install-client && npm run build",
-    "start":"npm run server ",
-    "dev":"concurrently --kill-others-on-fail \"npm run client\" \"npm run server\""
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "start": "npm run server ",
+    "dev": "concurrently --kill-others-on-fail \"npm run client\" \"npm run server\""
   },
   "eslintConfig": {
     "extends": [
