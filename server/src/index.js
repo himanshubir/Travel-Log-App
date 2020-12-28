@@ -22,7 +22,7 @@ app.use(helmet({
     contentSecurityPolicy: false,
 }));
 app.use(cors({
-    origin:process.env.CORS_ORIGIN
+    origin:'https://travel-log-app-himanshu.herokuapp.com/'
 }));
 app.use(express.json()); // Body Parsing Middleware
 const port = process.env.PORT || 5000;
