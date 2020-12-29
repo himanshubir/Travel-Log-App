@@ -22,8 +22,8 @@
     "server": "cd server/src && npm install && node index.js",
     "build": "cd client  && npm run build",
     "install-client": "cd client && npm install",
-    "heroku-postbuild": "npm run install-client && npm run build",
-    "start": "npm run server ",
+    "heroku-postbuild": "npm run install-client && npm run build && npm start",
+    "start": "npm run server",
     "dev": "concurrently --kill-others-on-fail \"npm run client\" \"npm run server\""
   },
   "eslintConfig": {
