@@ -33,23 +33,30 @@ const App = () => {
     })
   }
   return (
-    <ReactMapGL
-      {...viewport}
-      mapStyle="mapbox://styles/himanshubiradar/ckhxn18e70un219qlwhq05q5i"
-      mapboxApiAccessToken={'pk.eyJ1IjoiaGltYW5zaHViaXJhZGFyIiwiYSI6ImNraHdyOHNzNTBvYmwyem1vb25tb2djN28ifQ.JWbSVKNAURjCCp2In5jaXQ'}
-      onDblClick={showNewMarkerPopup}
-      onViewportChange={nextViewport => setViewport(nextViewport)}
-    >
-    {
-      logEntries.map(entry =>{
-        return(
-          <div key={entry._id}>
-            <OurMarker entry={entry} viewport={viewport} newMarker = {newMarker} setNewMarker ={setNewMarker} getEntries={getEntries}/>
-          </div>
-        )
-      })
-    }
-    </ReactMapGL>
+    <div>
+
+      <ReactMapGL
+        {...viewport}
+        mapStyle="mapbox://styles/himanshubiradar/ckhxn18e70un219qlwhq05q5i"
+        mapboxApiAccessToken={'pk.eyJ1IjoiaGltYW5zaHViaXJhZGFyIiwiYSI6ImNraHdyOHNzNTBvYmwyem1vb25tb2djN28ifQ.JWbSVKNAURjCCp2In5jaXQ'}
+        onDblClick={showNewMarkerPopup}
+        onViewportChange={nextViewport => setViewport(nextViewport)}
+      >
+        <div className="header">
+            Double click to add new entry
+        </div>
+      {
+        logEntries.map(entry =>{
+          return(
+            <div key={entry._id}>
+              <OurMarker entry={entry} viewport={viewport} newMarker = {newMarker} setNewMarker ={setNewMarker} getEntries={getEntries}/>
+            </div>
+          )
+        })
+      }
+      
+      </ReactMapGL>
+    </div>
   );
 }
 export default App;
