@@ -1,5 +1,5 @@
 
-const API_URL = 'http://localhost:5000';
+const API_URL = 'https://travel-log-app-himanshu.herokuapp.com/';
 // This is what talks to the backend
 export async function listLogEntries(){  
 
